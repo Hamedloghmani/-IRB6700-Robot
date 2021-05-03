@@ -152,14 +152,6 @@ class IRB6700:
         dh_for_link4 = self.create_dh_matrix(theta=thetas[4], alpha=-90, r=0, d=0)
         dh_for_link5 = self.create_dh_matrix(theta=thetas[5], alpha=0, r=0, d=0)
 
-        # temp = np.matmul(dh_for_link0, dh_for_link1)
-        # temp = np.matmul(temp, dh_for_link2)
-        # temp = np.matmul(temp, dh_for_link3)
-        # temp = np.matmul(temp, dh_for_link4)
-        # temp = np.matmul(temp, dh_for_link5)
-        # temp = np.matmul(temp, np.array([1,1,1,1]))
-
-        # this line is replacement for above commented block
         final_coordination = dh_for_link0 @ dh_for_link1 @ dh_for_link2 @ dh_for_link3 @ dh_for_link4 @ dh_for_link5 @ \
             np.array([0, 0, 0, 1])
 
